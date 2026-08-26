@@ -1,0 +1,1276 @@
+---
+title: "proyecto 1"
+author: "CAMILO, VALERIA, LIZ"
+date: "2026-08-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+install.packages("stringdist")
+```
+
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(dplyr)
+library(readr)
+library(dplyr)
+library(stringi)
+library(stringr)
+library(stringdist)
+```
+
+
+# BASE LIMPIA SABER 11 2010-1
+```{r}
+saber11_20101 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20101.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20101 <- saber11_20101 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+  ) 
+```
+
+# BASE LIMPIA SABER 11 2010-2
+```{r}
+saber11_20102 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20102.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20102 <- saber11_20102 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+  ) 
+```
+
+# BASE LIMPIA SABER 11 2011-1
+```{r}
+saber11_20111 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20111.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20111 <- saber11_20111 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+  ) 
+```
+
+# BASE LIMPIA SABER 11 2011-2
+```{r}
+saber11_20112 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20112.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20112 <- saber11_20112 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+  ) 
+```
+
+
+# BASE LIMPIA SABER 11 2014-1
+```{r}
+saber11_20121 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20121.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20121 <- saber11_20121 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    recaf_punt_c_naturales,
+    recaf_punt_ingles,
+    recaf_punt_matematicas,
+    recaf_punt_lectura_critica,
+    recaf_punt_sociales_ciudadanas,
+  ) %>%
+  rename(
+    punt_c_naturales = recaf_punt_c_naturales,
+    punt_ingles = recaf_punt_ingles,
+    punt_matematicas = recaf_punt_matematicas,
+    punt_lectura_critica = recaf_punt_lectura_critica,
+    punt_sociales_ciudadanas = recaf_punt_sociales_ciudadanas
+  )
+```
+
+# BASE LIMPIA SABER 11 2012-2
+```{r}
+saber11_20122 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20122.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20122 <- saber11_20122 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    recaf_punt_c_naturales,
+    recaf_punt_ingles,
+    recaf_punt_matematicas,
+    recaf_punt_lectura_critica,
+    recaf_punt_sociales_ciudadanas,
+  ) %>%
+  rename(
+    punt_c_naturales = recaf_punt_c_naturales,
+    punt_ingles = recaf_punt_ingles,
+    punt_matematicas = recaf_punt_matematicas,
+    punt_lectura_critica = recaf_punt_lectura_critica,
+    punt_sociales_ciudadanas = recaf_punt_sociales_ciudadanas
+  )
+```
+
+# BASE LIMPIA SABER 11 2013-1
+```{r}
+saber11_20131 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20131.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20131 <- saber11_20131 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    recaf_punt_c_naturales,
+    recaf_punt_ingles,
+    recaf_punt_matematicas,
+    recaf_punt_lectura_critica,
+    recaf_punt_sociales_ciudadanas,
+  ) %>%
+  rename(
+    punt_c_naturales = recaf_punt_c_naturales,
+    punt_ingles = recaf_punt_ingles,
+    punt_matematicas = recaf_punt_matematicas,
+    punt_lectura_critica = recaf_punt_lectura_critica,
+    punt_sociales_ciudadanas = recaf_punt_sociales_ciudadanas
+  )
+```
+
+# BASE LIMPIA SABER 11 2013-2
+```{r}
+saber11_20132 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20132.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20132 <- saber11_20132 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    recaf_punt_c_naturales,
+    recaf_punt_ingles,
+    recaf_punt_matematicas,
+    recaf_punt_lectura_critica,
+    recaf_punt_sociales_ciudadanas,
+  ) %>%
+  rename(
+    punt_c_naturales = recaf_punt_c_naturales,
+    punt_ingles = recaf_punt_ingles,
+    punt_matematicas = recaf_punt_matematicas,
+    punt_lectura_critica = recaf_punt_lectura_critica,
+    punt_sociales_ciudadanas = recaf_punt_sociales_ciudadanas
+  )
+```
+
+
+# BASE LIMPIA SABER 11 2014-1
+```{r}
+saber11_20141 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20141.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20141 <- saber11_20141 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    recaf_punt_c_naturales,
+    recaf_punt_ingles,
+    recaf_punt_matematicas,
+    recaf_punt_lectura_critica,
+    recaf_punt_sociales_ciudadanas,
+  ) %>%
+  rename(
+    punt_c_naturales = recaf_punt_c_naturales,
+    punt_ingles = recaf_punt_ingles,
+    punt_matematicas = recaf_punt_matematicas,
+    punt_lectura_critica = recaf_punt_lectura_critica,
+    punt_sociales_ciudadanas = recaf_punt_sociales_ciudadanas
+  )
+```
+
+# BASE LIMPIA SABER 11 2014-2
+```{r}
+saber11_20142 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20142.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20142 <- saber11_20142 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2015-1
+```{r}
+saber11_20151 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20151.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20151 <- saber11_20151 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2015-2
+```{r}
+saber11_20152 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20152.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20152 <- saber11_20152 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2016-1
+```{r}
+saber11_20161 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20161.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20161 <- saber11_20161 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2016-2
+```{r}
+saber11_20162 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20162.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20162 <- saber11_20162 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2017-1
+```{r}
+saber11_20171 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20171.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20171 <- saber11_20171 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2017-2
+```{r}
+saber11_20172 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20172.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20172 <- saber11_20172 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+
+# BASE LIMPIA SABER 11 2018-1
+```{r}
+saber11_20181 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20181.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+saber11_20181 <- saber11_20181 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2018-2
+```{r}
+saber11_20182 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20182.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20182 <- saber11_20182 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2019-1
+```{r}
+saber11_20191 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20191.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20191 <- saber11_20191 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2019-2
+```{r}
+saber11_20192 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20192.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20192 <- saber11_20192 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2020-1
+```{r}
+saber11_20201 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20201.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20201 <- saber11_20201 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2020-2
+```{r}
+saber11_20202 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20202.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20202 <- saber11_20202 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2021-1
+```{r}
+saber11_20211 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20211.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20211 <- saber11_20211 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2021-2
+```{r}
+saber11_20212 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20212.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20212 <- saber11_20212 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2022-1
+```{r}
+saber11_20221 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20221.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20221 <- saber11_20221 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2022-2
+```{r}
+saber11_20222 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20222.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20222 <- saber11_20222 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2023-1
+```{r}
+saber11_20231 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20231.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20231 <- saber11_20231 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2023-2
+```{r}
+saber11_20232 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20232.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20232 <- saber11_20232 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2024-1
+```{r}
+saber11_20241 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20241.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20241 <- saber11_20241 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2024-2
+```{r}
+saber11_20242 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20242.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20242 <- saber11_20242 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2025-1
+```{r}
+saber11_20251 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20251.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20251 <- saber11_20251 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+# BASE LIMPIA SABER 11 2025-2
+```{r}
+saber11_20252 <- read_delim(
+  "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER 11/Examen_Saber_11_20252.txt",
+  delim = ";",
+  show_col_types = FALSE,
+  na = c("", "NA")
+)
+
+saber11_20252 <- saber11_20252 %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    cole_jornada,
+    cole_bilingue,
+    cole_area_ubicacion,
+    cole_calendario,
+    cole_naturaleza,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    punt_c_naturales,
+    punt_ingles,
+    punt_matematicas,
+    punt_lectura_critica,
+    punt_sociales_ciudadanas,
+    punt_global,
+    percentil_c_naturales,
+    percentil_ingles,
+    percentil_lectura_critica,
+    percentil_matematicas,
+    percentil_sociales_ciudadanas,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER 11 UNIDAS
+```{r}
+saber11 <- bind_rows(
+  saber11_20101,
+  saber11_20102,
+  saber11_20111,
+  saber11_20112,
+  saber11_20121,
+  saber11_20122,
+  saber11_20131,
+  saber11_20132,
+  saber11_20141,
+  saber11_20142,
+  saber11_20151,
+  saber11_20152,
+  saber11_20161,
+  saber11_20162,
+  saber11_20171,
+  saber11_20172,
+  saber11_20181,
+  saber11_20182,
+  saber11_20191,
+  saber11_20192,
+  saber11_20201,
+  saber11_20202,
+  saber11_20211,
+  saber11_20212,
+  saber11_20221,
+  saber11_20222,
+  saber11_20231,
+  saber11_20232,
+  saber11_20241,
+  saber11_20242,
+  saber11_20251,
+  saber11_20252
+)
+saber11 <- saber11 %>%
+  distinct(periodo, estu_consecutivo, .keep_all = TRUE)
+```
