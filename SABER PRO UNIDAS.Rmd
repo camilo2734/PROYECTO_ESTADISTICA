@@ -1,0 +1,466 @@
+---
+title: "SABER PRO UNIDOS"
+author: "CAMILO, VALERIA, LIZ"
+date: "2026-08-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RUTA RAPIDA PARA LOS ARCHIVOS DE SABER PRO
+```{r}
+ruta_pro <- "C:/Users/eduar/OneDrive/Escritorio/PRUEBA SABER PRO"
+```
+
+## BASE LIMPIA SABER PRO 2014
+```{r}
+saberpro_2014 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2014.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2015
+```{r}
+saberpro_2015 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2015.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2016
+```{r}
+saberpro_2016 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2016.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER PRO 2017
+```{r}
+saberpro_2017 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2017.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2018
+```{r}
+saberpro_2018 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2018.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2019
+```{r}
+saberpro_2019 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2019.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2020
+```{r}
+saberpro_2020 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2020.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+   periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+## BASE LIMPIA SABER PRO 2021
+```{r}
+saberpro_2021 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2021.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER PRO 2022
+```{r}
+saberpro_2022 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2022.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_fechanacimiento,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER PRO 2023
+```{r}
+saberpro_2023 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2023.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    estu_depto_reside,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_fechanacimiento,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER PRO 2024
+```{r}
+saberpro_2024 <- read.delim(
+  file.path(ruta_pro, "Examen_Saber_Pro_Genericas_2024.txt"),
+  sep = ";",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+) %>%
+  select(
+    periodo,
+    estu_consecutivo,
+    estu_estudiante,
+    inst_cod_institucion,
+    inst_nombre_institucion,
+    estu_snies_prgmacademico,
+    estu_prgm_academico,
+    estu_nucleo_pregrado,
+    estu_fechanacimiento,
+    estu_genero,
+    fami_educacionmadre,
+    fami_educacionpadre,
+    fami_estratovivienda,
+    fami_tienecomputador,
+    fami_tieneinternet,
+    mod_ingles_punt,
+    mod_razona_cuantitat_punt,
+    mod_lectura_critica_punt,
+    mod_competen_ciudada_punt,
+    mod_comuni_escrita_punt,
+    punt_global,
+    mod_ingles_pnal,
+    mod_razona_cuantitativo_pnal,
+    mod_lectura_critica_pnal,
+    mod_competen_ciudada_pnal,
+    mod_comuni_escrita_pnal,
+    percentil_global,
+  )
+```
+
+
+## BASE LIMPIA SABER PRO
+```{r}
+saberpro_total <- bind_rows(
+  saberpro_2014,
+  saberpro_2015,
+  saberpro_2016,
+  saberpro_2017,
+  saberpro_2018,
+  saberpro_2019,
+  saberpro_2020,
+  saberpro_2021,
+  saberpro_2022,
+  saberpro_2023,
+  saberpro_2024
+) %>%
+  distinct()
+```
